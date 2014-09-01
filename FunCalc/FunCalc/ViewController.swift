@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         funCalc.setCalc(0.0);
         calculationTotal.text = " ";
         calculationHolder.text = " ";
-        counter.progress = 0.0;
+       // counter.progress = 0.0;
         counterinternal = 0;
         let diceRoll = Int(arc4random_uniform(20))
         let diceRollDouble = String(diceRoll)
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         startButton.hidden = true;
         nextButton2.hidden = false;
         userResult.hidden = true
-      //  nextButton.text = ""
+        nextButton.text = ""
         
         // println(maxNumber.value);
         //  println(numberOfRounds.value);
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         let multiplicationRoll = Int(arc4random_uniform(4))
         if (counterinternal == 10 - 2){
             calculationTotal.text = "Enter total below"
-            //snextButton.text = "Finish"
+            //nextButton.text = "Finish"
             userResult.hidden = false
             finishButton.hidden = false
             nextButton2.hidden = true;
@@ -117,18 +117,19 @@ class ViewController: UIViewController {
             println(userResult.text);
             println("CalculationTotal")
             println(funCalc.getCalc());
-            // nextButton.text = "Start Again"
+            //nextButton.text = "Start Again"
             var s = String(format: "%@%.0f", "",funCalc.getCalc());
-            
+            println("this is s")
+            println(s)
             if (userResult.text == s){
                 nextButton.text = "Correct"
                 userResult.hidden = true
             }
             else{
-              //  nextButton.text = "Incorrect"
+                nextButton.text = "Incorrect"
                 userResult.hidden = true
             }
-            
+            println(nextButton.text)
             var temp = funCalc.getCalc();
             calculationTotal.text = String(format: "%@%.0f", "",temp);
             calculationHolder.text = finalCalculationHolder;
